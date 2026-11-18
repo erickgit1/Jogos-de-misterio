@@ -1,5 +1,5 @@
 // Substitua somente esta URL pelo checkout definitivo dos dois casos.
-const checkoutDoisCasos = 'https://pay.kiwify.com.br/8L6KHYg';
+const checkoutDoisCasos = 'https://pay.kiwify.com.br/OfDohiQ';
 const oferta = document.querySelector('#roleta-oferta');
 const etapaGiro = oferta.querySelector('.etapa-giro');
 const premio = oferta.querySelector('.resultado');
