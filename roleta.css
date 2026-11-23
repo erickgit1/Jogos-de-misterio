@@ -1,35 +1,239 @@
-#roleta-oferta{box-sizing:border-box;width:min(92vw,410px);max-height:92dvh;overflow:auto;margin:auto;padding:26px 22px 20px;border:1px solid #4c7766;border-radius:18px;background:#102920;color:#f6f1df;text-align:center;box-shadow:0 20px 80px #0009}
-#roleta-oferta::backdrop{background:#06110de0}
-#roleta-oferta h2{font:600 clamp(24px,6vw,32px)/1.12 Georgia,serif;margin:8px 0 14px;letter-spacing:-.03em}
-#roleta-oferta .selo{font:600 11px/1.4 monospace;letter-spacing:.16em;color:#9cdcb9}
-#roleta-oferta .mecanismo{position:relative;width:min(220px,54vw,33dvh);aspect-ratio:1;margin:18px auto}
-#roleta-oferta .mecanismo:before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);z-index:1;border-left:10px solid transparent;border-right:10px solid transparent;border-top:20px solid #ffcf73}
-#roleta-oferta svg{width:100%;height:100%;display:block}
-#roleta-oferta .rodando{animation:giro-dossie 2.4s cubic-bezier(.12,.64,.16,1) forwards}
-@keyframes giro-dossie{from{transform:rotate(0)}to{transform:rotate(1035deg)}}
-#roleta-oferta .girar,#roleta-oferta .combo{display:block;width:100%;box-sizing:border-box;border:0;border-radius:8px;background:#a4ecc2;color:#10281d;padding:14px 8px;font:700 16px/1.2 system-ui;cursor:pointer}
-#roleta-oferta .combo[aria-disabled=true]{background:#b4c7b9;cursor:default}
-#roleta-oferta [hidden]{display:none!important}
-#roleta-oferta .pular{display:inline-block;margin-top:14px;color:#e7efe5;text-decoration:underline;font:14px/1.4 system-ui}
-#roleta-oferta p{color:#e7efe5;margin:10px auto 14px;font:16px/1.45 system-ui}
-#roleta-oferta .pendente{font-size:12px;margin-bottom:0}
-#roleta-oferta .confetes{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.confetes i{position:absolute;top:-12px;width:6px;height:11px;animation:confete-dossie 1.4s ease-in forwards}
-@keyframes confete-dossie{to{transform:translateY(520px) rotate(290deg);opacity:0}}
-@media(prefers-reduced-motion:reduce){#roleta-oferta .rodando{animation:none;transform:rotate(1035deg)}}
-#roleta-oferta{background:#f8f6e9;color:#142f26;padding:0;border:1px solid #97a58b;border-radius:19px;overflow-x:hidden}
-#roleta-oferta .etapa-giro,#roleta-oferta .corpo{padding:23px clamp(16px,5vw,29px)}
-#roleta-oferta .etapa-giro{border-top:6px solid #438164}
-#roleta-oferta .selo{color:#49725d;letter-spacing:.13em}
-#roleta-oferta h2{color:#173d2e;font-size:clamp(26px,6vw,33px);line-height:1.05;margin:10px 0}
-#roleta-oferta p{color:#3a4840;font-size:15px}
-#roleta-oferta .mecanismo{width:min(284px,66vw,39dvh);filter:drop-shadow(0 6px 5px #14372638);margin:18px auto 23px}
-#roleta-oferta .girar,#roleta-oferta .combo{background:#15583d;color:white;border-radius:30px;text-decoration:none}
-#roleta-oferta .prazo{background:#214c39;color:#fff;padding:9px;font:600 14px system-ui}
-#roleta-oferta time{font-variant-numeric:tabular-nums;color:#f9de91}
-#roleta-oferta .paginas{height:clamp(120px,23vh,185px);display:flex;align-items:center;justify-content:center;margin:14px 0 18px}
-#roleta-oferta .paginas img{height:91%;max-width:34%;object-fit:contain;box-shadow:0 3px 8px #14291e50;transform:rotate(-7deg);margin-right:-6%}
-#roleta-oferta .paginas img:nth-child(2){position:relative;z-index:1;height:100%;transform:none}
-#roleta-oferta .paginas img:last-child{transform:rotate(7deg);margin:0}
-#roleta-oferta .pular{color:#385945;font-size:13px}
-#roleta-oferta .confetes{z-index:2}
+#roleta-oferta {
+    box-sizing: border-box;
+    width: min(92vw, 410px);
+    max-height: 92dvh;
+    overflow: auto;
+    margin: auto;
+    padding: 26px 22px 20px;
+    border: 1px solid #4c7766;
+    border-radius: 18px;
+    background: #102920;
+    color: #f6f1df;
+    text-align: center;
+    box-shadow: 0 20px 80px #0009
+}
+
+#roleta-oferta::backdrop {
+    background: #06110de0
+}
+
+#roleta-oferta h2 {
+    font: 600 clamp(24px, 6vw, 32px)/1.12 Georgia, serif;
+    margin: 8px 0 14px;
+    letter-spacing: -.03em
+}
+
+#roleta-oferta .selo {
+    font: 600 11px/1.4 monospace;
+    letter-spacing: .16em;
+    color: #9cdcb9
+}
+
+#roleta-oferta .mecanismo {
+    position: relative;
+    width: min(220px, 54vw, 33dvh);
+    aspect-ratio: 1;
+    margin: 18px auto
+}
+
+#roleta-oferta .mecanismo:before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #ffcf73
+}
+
+#roleta-oferta svg {
+    width: 100%;
+    height: 100%;
+    display: block
+}
+
+#roleta-oferta .rodando {
+    animation: giro-dossie 2.4s cubic-bezier(.12, .64, .16, 1) forwards
+}
+
+@keyframes giro-dossie {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(1035deg)
+    }
+}
+
+#roleta-oferta .girar,
+#roleta-oferta .combo {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 8px;
+    background: #a4ecc2;
+    color: #10281d;
+    padding: 14px 8px;
+    font: 700 16px/1.2 system-ui;
+    cursor: pointer
+}
+
+#roleta-oferta .combo[aria-disabled=true] {
+    background: #b4c7b9;
+    cursor: default
+}
+
+#roleta-oferta [hidden] {
+    display: none !important
+}
+
+#roleta-oferta .pular {
+    display: inline-block;
+    margin-top: 14px;
+    color: #e7efe5;
+    text-decoration: underline;
+    font: 14px/1.4 system-ui
+}
+
+#roleta-oferta p {
+    color: #e7efe5;
+    margin: 10px auto 14px;
+    font: 16px/1.45 system-ui
+}
+
+#roleta-oferta .pendente {
+    font-size: 12px;
+    margin-bottom: 0
+}
+
+#roleta-oferta .confetes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.confetes i {
+    position: absolute;
+    top: -12px;
+    width: 6px;
+    height: 11px;
+    animation: confete-dossie 1.4s ease-in forwards
+}
+
+@keyframes confete-dossie {
+    to {
+        transform: translateY(520px) rotate(290deg);
+        opacity: 0
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    #roleta-oferta .rodando {
+        animation: none;
+        transform: rotate(1035deg)
+    }
+}
+
+#roleta-oferta {
+    background: #f8f6e9;
+    color: #142f26;
+    padding: 0;
+    border: 1px solid #97a58b;
+    border-radius: 19px;
+    overflow-x: hidden
+}
+
+#roleta-oferta .etapa-giro,
+#roleta-oferta .corpo {
+    padding: 23px clamp(16px, 5vw, 29px)
+}
+
+#roleta-oferta .etapa-giro {
+    border-top: 6px solid #438164
+}
+
+#roleta-oferta .selo {
+    color: #49725d;
+    letter-spacing: .13em
+}
+
+#roleta-oferta h2 {
+    color: #173d2e;
+    font-size: clamp(26px, 6vw, 33px);
+    line-height: 1.05;
+    margin: 10px 0
+}
+
+#roleta-oferta p {
+    color: #3a4840;
+    font-size: 15px
+}
+
+#roleta-oferta .mecanismo {
+    width: min(284px, 66vw, 39dvh);
+    filter: drop-shadow(0 6px 5px #14372638);
+    margin: 18px auto 23px
+}
+
+#roleta-oferta .girar,
+#roleta-oferta .combo {
+    background: #15583d;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none
+}
+
+#roleta-oferta .prazo {
+    background: #214c39;
+    color: #fff;
+    padding: 9px;
+    font: 600 14px system-ui
+}
+
+#roleta-oferta time {
+    font-variant-numeric: tabular-nums;
+    color: #f9de91
+}
+
+#roleta-oferta .paginas {
+    height: clamp(120px, 23vh, 185px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 0 18px
+}
+
+#roleta-oferta .paginas img {
+    height: 91%;
+    max-width: 34%;
+    object-fit: contain;
+    box-shadow: 0 3px 8px #14291e50;
+    transform: rotate(-7deg);
+    margin-right: -6%
+}
+
+#roleta-oferta .paginas img:nth-child(2) {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    transform: none
+}
+
+#roleta-oferta .paginas img:last-child {
+    transform: rotate(7deg);
+    margin: 0
+}
+
+#roleta-oferta .pular {
+    color: #385945;
+    font-size: 13px
+}
+
+#roleta-oferta .confetes {
+    z-index: 2
+}
